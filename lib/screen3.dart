@@ -67,11 +67,26 @@ class _Screen3State extends State<Screen3> {
       appBar: AppBar(
         title: const Text('Connectivity example app'),
       ),
-      body: Center(
-          child: Text(
-        'Connection Status: ${_connectionStatus.name.toUpperCase()}',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      )),
+      // body: Center(
+      //     child: Text(
+      //   'Connection Status: ${_connectionStatus.name.toUpperCase()}',
+      //   style: TextStyle(fontWeight: FontWeight.bold),
+      // )),
+      body: Container(
+        // child: Text('Text from Custom Broadcast Receiver:\n' + data,  style: TextStyle(fontWeight: FontWeight.bold))
+          child: Center(
+            child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                    style: TextStyle(
+                      color: Colors.redAccent,
+                    ),
+                    //style for all textspan
+                    children: [
+                      TextSpan(text:'Connection Status: ' , style:  TextStyle(color: Colors.black, fontSize: 16)),
+                      TextSpan(text: _connectionStatus.name.toUpperCase() , style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    ])),
+          )),
     );
   }
 }

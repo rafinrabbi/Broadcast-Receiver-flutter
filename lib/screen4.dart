@@ -55,12 +55,12 @@ class _Screen4State extends State<Screen4> {
                                   children: [
                                     TextSpan(
                                         text:
-                                            "Your Guess was ${snapshot.data?.batteryLevel}\n",
+                                            "Your Guess was "+ data+ "\n",
                                         style: TextStyle(fontSize: 19)),
                                     // TextSpan(text:"You can learn to build"),
                                     // TextSpan(text:data, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                                     TextSpan(
-                                        text: 'Actual Percentage is '+data,
+                                        text: 'Actual Percentage is ${snapshot.data?.batteryLevel}',
                                         style: TextStyle(
                                             color: Colors.blueAccent,
                                             fontSize: 30))
